@@ -1,0 +1,505 @@
+<html lang="zu">
+
+<head>
+    <title>ClockWatch Type</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="my pic.gif">
+    <link rel="stylesheets" href="CSS.css">
+    <script src="jquery-2.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baskervville&display=swap');
+        /*Used*/
+        @import url('https://fonts.googleapis.com/css2?family=Bigshot+One&display=swap');
+        /*Used*/
+        @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+        /*Used*/
+        @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+        /*Used*/
+        @import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+        /*Used*/
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+        /* Used*/
+        @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap');
+        /*Used*/
+        @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+        /*Used*/
+        /* div {
+            background-color: white;
+            width: 100%;
+            height: 88%;
+
+        } */
+
+        input {
+            border: none;
+            font-family: sans-serif;
+            outline: none;
+            display: block;
+            width: 50%;
+            /* height: 10%; */
+            margin-left: 25%;
+            margin-right: 25%;
+        }
+
+        .p {
+            border: none;
+            outline: none;
+            display: block;
+            width: 50%;
+            /* height: 10%; */
+            margin-left: 25%;
+            margin-right: 25%;
+            color: black;
+            background-color: white;
+            padding: 10px;
+            padding-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px;
+            background-color: red;
+            /* margin-top: -20%;
+            margin-left: 3px; */
+            border: none;
+            display: inline;
+            margin-top: 10px;
+        }
+
+        #I-am-different {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: large;
+            font-family: 'Lucida Sans';
+            height: 30px;
+            margin-top: 30px;
+            position: relative;
+        }
+
+        #I-am-different {
+            font-weight: bolder;
+            position: relative;
+        }
+
+        #option {
+            /* opacity: 30%; */
+            background: radial-gradient(blue, navy);
+            height: 10%;
+            padding: 3px;
+        }
+
+        .Window {
+            background-color: navy;
+            height: 50%;
+            width: 50%;
+            animation-name: now;
+            animation-duration: 2s;
+            resize: both;
+        }
+
+        .Window::backdrop {
+            background: burlywood;
+            opacity: 50%;
+        }
+
+        #close {
+            color: rgba(0, 0, 128, 0.644);
+            background-color: rgba(0, 0, 128, 0.356);
+            border: none;
+            margin-bottom: 5%;
+            margin-left: 95%;
+            width: 30px;
+        }
+
+        #close:hover {
+            color: red;
+            background-color: black;
+        }
+
+        .IamNothing {
+            position: relative;
+            font-style: italic;
+        }
+
+        .contentful {
+            list-style: upper-alpha;
+            text-align: center;
+            font-weight: bolder;
+            border-bottom: black solid 2px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            padding: 10px;
+
+        }
+
+        .contentful:hover::before {
+            content: "Load ";
+        }
+
+        .contentful:hover {
+            background-color: lightgrey;
+            opacity: 80%;
+            margin-bottom: 21px;
+        }
+
+        .contentful:hover::after {
+            content: " ?";
+        }
+    </style>
+</head>
+
+<body style="background:black;">
+    <div id="option">
+        <button class="btn btn-secondary"
+            onclick="function hah() {window.location.replace('TheStart.html')}; hah()">Back</button>
+        <button id="Print-or-Save" class="btn btn-secondary" accesskey="P">Print</button>
+        <button id="CLICK" class="btn btn-secondary">Options</button>
+
+        <!-- <button id="load">load</button>
+        -->
+
+    </div>
+    <div id="The-page">
+        <input accesskey="U" id="I-am-different" placeholder="HEADING">
+        <p contenteditable="true" id="p" class="p" spellcheck="true" lang="zh-Hans">This is where you type</p>
+    </div>
+
+    <dialog id="Window" class="ui-widget-content Window" style="position: relative;">
+        <h1 style="font-family: fleur de leah; text-align: center;">Options</h1>
+        <button id="close">✖</button>
+        <div style="border: solid 4px black;padding: 10px; width: auto; height: auto;" id="Text-section"
+            title="Text section contains options which format text">
+            <legend style="text-align: center; ">Text</legend>
+            <button class="btn btn-info" id="samp">Sample
+                text</button>
+            <div class="dropdown" style="display: inline;">
+
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Fonts
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><button id="bas-vil" class="dropdown-item">Baskervile</button></li>
+                    <li><button id="bas-ivl" class="dropdown-item">Hand writing</button></li>
+                    <li><button id="bas-l" class="dropdown-item">Big and Fat</button></li>
+                    <li><button id="bas-lvb" class="dropdown-item">1990</button></li>
+                    <li><button id="bas-lvc" class="dropdown-item">Flowers</button></li>
+                    <li><button id="bas-lvd" class="dropdown-item">Plain</button></li>
+                    <li><button id="bas-lva" class="dropdown-item">SketchCraft</button></li>
+                    <li><button id="bas-lv" class="dropdown-item">French Script</button></li>
+                    <li><button id="bas-lvc" class="dropdown-item" disabled style="font-weight: bolder;">More Fonts
+                            Comming
+                            Soon!</button></li>
+                </ul>
+            </div>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Print Style
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><button class="dropdown-item" id="PIPA">Print In Poem Alingment</button></li>
+            </ul>
+
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Font Size
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li> <input type="number" id="font-size"
+                        style="display:inline; width: 90%; margin-left: 5px; margin-right: 10px; height: 40px; border: black 1px solid; margin-top: 19px;"
+                        placeholder="Size"> <input id="sub" style="display: inline-block;" class="btn btn-secondary"
+                        type="button" value="go">
+            </ul>
+
+            <div class="dropdown" style="display: inline;">
+
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Font Style
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><button id="bas-bold" class="dropdown-item">Bold</button></li>
+                    <li><button id="bas-italic" class="dropdown-item">Italic</button></li>
+                    <li><button id="bas-underline" class="dropdown-item">Underline</button></li>
+                </ul>
+            </div>
+            <div class="dropdown" style="display: inline;">
+
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Text position
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li> <button id="bas-mov" class="dropdown-item">Move The text</button></li>
+                    <li> <button id="bas-stmov" class="dropdown-item">Stop moving text</button></li>
+                </ul>
+            </div>
+
+        </div>
+
+        </div>
+
+        <div style="border: solid 4px black;padding: 10px; margin-top: 6px;">
+            <legend style="text-align: center; color: orangered;">Note</legend> <input type="text"
+                style="display: inline-block; width: 20%; margin-left: -3px; margin-right: 6px; border-left: navy 20px solid; height: 15%;"
+                id="inn"><button id="theBtn" class="btn btn-warning">Make a note ></button>
+        </div>
+
+        </div>
+        <div style="border: solid 4px black;padding: 10px; margin-top: 6px; align-content: center;">
+            <legend style="text-align: center; color: gold;">Save and Load</legend>
+
+            <input style="height: 30px; width: 48%; align-self: center;" id="savebox"
+                placeholder="paste content in this box then click save"> <button id="save"
+                class="btn btn-primary">Save</button><button id="load" class="btn btn-primary"
+                accesskey="R">Load</button>
+        </div>
+    </dialog>
+    <dialog id="Wind" class="Window" style="background-color: aliceblue;">
+        <ol>
+            <li id="c1" onclick="load1()" class="contentful">Content 1</li>
+            <li id="c2" onclick="load2()" class="contentful">Content 2</li>
+            <li id="c3" onclick="load3()" class="contentful">Content 3</li>
+            <li id="c4" onclick="load4()" class="contentful">Content 4</li>
+        </ol>
+
+    </dialog>
+    <!-- <div id="The-Option-Box">
+    </div> -->
+    <!-- <div id="The-Page"> -->
+    <!-- <p></p>
+    </div> -->
+    <!-- <textarea id="text" spellcheck="true" maxlength="10"></textarea><button id="btn" class="btn">Insert</button><button id="CLS" class="btn">Clear All</button> -->
+    <script>
+        // font size
+
+        $(document).ready(function () {
+            $("#sub").click(function () {
+                var inputnum = $("#font-size").val()
+                $("#p").css("font-size", inputnum)
+            })
+        })
+        /* here starts code for fonts*/
+
+        $(document).ready(function () {
+            $("#bas-vil").click(function () {
+                $("#p").css("font-family", "Baskervville")
+            })
+        })
+
+        $(document).ready(function () {
+            $("#bas-lvb").click(function () {
+                $("#p").css("font-family", "Fredericka the Great")
+            })
+        })
+        $(document).ready(function () {
+            $("#bas-ivl").click(function () {
+                $("#p").css("font-family", "ZCOOL KuaiLe")
+            })
+        })
+
+        $(document).ready(function () {
+            $("#bas-l").click(function () {
+                $("#p").css("font-family", "Bigshot One")
+            })
+        })
+
+        $(document).ready(function () {
+            $("#bas-lva").click(function () {
+                $("#p").css("font-family", "Cabin Sketch")
+            })
+        })
+
+        $(document).ready(function () {
+            $("#bas-lv").click(function () {
+                $("#p").css("font-family", "Cookie")
+            })
+        })
+
+        $(document).ready(function () {
+            $("#bas-lvc").click(function () {
+                $("#p").css("font-family", "Fleur De Leah")
+            })
+        })
+
+        $(document).ready(function () {
+            $("#bas-lvd").click(function () {
+                $("#p").css("font-family", "Lato")
+            })
+        })
+        /* Here starts other code */
+        // x-x-x-x-x-x-x-x-x-x-x-x-//
+        //this is print command
+        $("#Print-or-Save").click(function () {
+            $("#I-am-different").css("margin-right", 0)
+            $("#I-am-different").css("margin-left", 0)
+            $("#I-am-different").css("width", '100%')
+            $("#p").css("margin-right", 0)
+            $("#p").css("margin-left", 0)
+            $("#p").css("width", '100%')
+            $("#p").css("display", "block")
+            $("#option").hide()
+            print()
+            $("#option").show()
+            $("#I-am-different").css("margin-right", '25%')
+            $("#I-am-different").css("margin-left", '25%')
+            $("#I-am-different").css("width", '50%')
+            $("#p").css("margin-right", '25%')
+            $("#p").css("margin-left", '25%')
+            $("#p").css("width", '50%')
+
+        })
+
+        $("#PIPA").click(function () {
+            var wdw = document.getElementById("Window")
+            $("#Window").modal().hide()
+            $("#option").hide()
+            print()
+            $("#option").show()
+            $("#Window").css("display", "block")
+
+        })
+        //here ends print command
+        //x-x-x-x-x-x-x-x-x-x-x-x-x//
+        //code to open a new window
+        function ME() {
+            $(document).ready(
+                function () {
+                    var meme = document.getElementById("Window")
+                    $('#CLICK').click(function () { meme.showModal() })
+                    $(meme).animate({ top: '-=100' })
+
+                })
+            $("#close").click(function () {
+                var cls = document.getElementById("Window")
+                cls.close()
+            })
+        }
+        // ends here
+        ME()
+        // function to insert sample text
+        $("#samp").click(function () {
+            var textArray = ["Hello....You are veiwing sample text. This is used to display how this page looks when filled with text. A B C D E F G H I J K L M N O P Q R S T U V W  X Y Z, that was the  alphabetical  order. Now lets have an over veiw of this word processer, the fonts button is used to change fonts and that input box is used to change the font size, Print/Save button is used to print or save your content. This Page can hold infinite content", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum nec ex et posuere. Suspendisse nisi dolor, accumsan et ultricies sit amet, maximus eu orci. In in nunc non erat dapibus fringilla sit amet quis velit. Morbi et mi leo. Phasellus odio enim, aliquet ut lacus ut, lacinia scelerisque tellus. Quisque faucibus mattis mollis. Phasellus gravida laoreet pharetra. Nunc a rhoncus elit. Mauris et facilisis metus, nec lobortis orci. Sed fermentum tincidunt pellentesque. Aliquam erat volutpat. Etiam erat enim, elementum vel bibendum eget, convallis quis nunc. Donec nec sagittis sem. Sed vel tempus diam. Maecenas eu dui a ligula eleifend pulvinar.Maecenas eleifend dictum sapien, vel mollis metus dictum quis. Vestibulum viverra cursus dui a pharetra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent pretium mauris nulla, eleifend blandit ante auctor id. Quisque eu lectus at purus tempor sagittis. Pellentesque facilisis volutpat mi a rhoncus. Donec massa ex, laoreet vitae hendrerit in, aliquet eget risus. Ut at mauris non neque cursus rutrum. Sed mattis lorem sed mauris interdum, in vehicula ante volutpat. In hac habitasse platea dictumst. Morbi pretium magna at elit rhoncus feugiat eu ac mauris. Integer quis posuere tortor, luctus sollicitudin nisl. Donec enim arcu, accumsan id elit sit amet, semper fringilla neque. Cras eleifend luctus augue, sed fermentum quam cursus eget. Pellentesque eget odio lacinia, viverra lectus eu, luctus justo.Nullam et lectus varius, ullamcorper tortor sit amet, finibus massa. Pellentesque gravida vehicula lectus quis dignissim. Praesent dignissim congue mi, a blandit mi semper sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec est metus, volutpat consequat lectus vel, faucibus laoreet risus. Donec sed fringilla augue. In congue leo sit amet velit interdum, ut auctor sem eleifend. Nullam porta nec sem viverra lacinia. Proin pulvinar mollis neque, a aliquet massa gravida vitae.Aenean varius viverra magna, at luctus lectus iaculis sit amet. Praesent metus mi, interdum non vestibulum at, sollicitudin vel justo. Etiam quis orci sed augue posuere semper. Duis et interdum nisl. In cursus dolor id massa vulputate, non congue nisl posuere. Cras metus purus, cursus ut sollicitudin ut, ultrices id turpis. Vestibulum vulputate pellentesque leo non consequat.Etiam vestibulum tellus in enim gravida, a rhoncus nibh interdum. Vivamus pulvinar pharetra molestie. In imperdiet quis sem sed semper. Donec eu sapien congue, elementum nulla ut, pharetra mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer nec felis quam. Vestibulum posuere nibh id aliquet hendrerit. Nullam vitae ullamcorper ipsum, a aliquam dui. Maecenas accumsan eget sem eu aliquam. Duis consequat scelerisque enim, sed mattis libero pulvinar vitae. Sed a ultrices metus. Maecenas in felis consequat, tincidunt lacus quis, efficitur sem."]
+            var text = textArray[Math.floor(Math.random() * 2)]
+            $("#p").text(text)
+            $("#I-am-different").val("Sample Text")
+            var theFont = ["Zcool Kualie", "fluer de leah", "Cookie", "Bigshot One", "Fredericka the Great"]
+            var RandomFont = theFont[Math.floor(Math.random() * 5)]
+            $("#p").css("font-family", RandomFont)
+            alert("Sample text entered")
+        })
+        // IMG LOAD // 
+        $("#theBtn").click(
+            function () {
+                var win = window.open("note", "", "width= 5px hieght= 4px")
+                var input = $("#inn").val()
+                win.document.write("<p>" + input + "</p>")
+                win.focus()
+            }
+
+        )
+        // $("#Quiz-Q-A").click(function () {
+        //     $("#The-page").remove()
+        //    $("body").append("<div id='The-page'><p contenteditable='true' id='p' class='p'>Q1</p></div>") 
+        // })
+        function SaveAndLoad() {
+            var local_stroage_name = ["content1", "content2", "content3", "content4"]
+            var local_stroage_headname = ["content1head", "content2head", "content3head", "content4head"]
+
+
+            $("#save").click(function () {
+                var i = 0
+                var input = $("#savebox").val()
+                var head = $("#I-am-different").val()
+                localStorage.setItem(local_stroage_name[i], input)
+                localStorage.setItem(local_stroage_headname[i], head)
+                alert("content saved!")
+                if (i === 4) {
+                    i = 0
+                }
+                else {
+                    i++
+                }
+            })
+            $("#load").click(function () {
+                var cls = document.getElementById("Window")
+                cls.close()
+                var clv = document.getElementById("Wind")
+                clv.showModal()
+
+            })
+        }
+
+        function load1() {
+            var clv = document.getElementById("Wind")
+            if (localStorage.getItem("content1") === "") {
+
+                // somthing
+            }
+            else {
+                $("#p").text(localStorage.getItem("content1"))
+
+            }
+            clv.close()
+        }
+        function load2() {
+            var clv = document.getElementById("Wind")
+            $("#p").text(localStorage.getItem("content2"))
+            clv.close()
+        }
+
+        function load3() {
+            var clv = document.getElementById("Wind")
+            $("#p").text(localStorage.getItem("content3"))
+            clv.close()
+        }
+        function load4() {
+            var clv = document.getElementById("Wind")
+            $("#p").text(localStorage.getItem("content4"))
+            clv.close()
+        }
+
+
+        SaveAndLoad()
+
+        $("#Window").ready(function () {
+            $("#Window").draggable({ disabled: true })
+        })
+
+
+        $("#bas-bold").click(function () {
+            $("#p").css("font-weight", "bold")
+        })
+        $("#bas-italic").click(function () {
+            $("#p").css("font-style", "italic")
+        })
+        $("#bas-underline").click(function () {
+            $("#p").css("text-decoration", "underline")
+        })
+
+        $("#bas-mov").click(function () {
+            $("#p").css("position", "reletive")
+            $("#I-am-different").css("position", "reletive")
+            $("#I-am-different").draggable()
+            $("#p").draggable({ disabled: false })
+            alert("Text is now move-able")
+        })
+        $("#bas-stmov").click(function () {
+            $("#I-am-different").draggable({ disabled: true })
+            $("#p").draggable({ disabled: true })
+        })
+
+    </script>
+</body>
+
+</html>

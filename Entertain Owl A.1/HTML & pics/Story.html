@@ -1,0 +1,164 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <title>Stories</title>
+    <style>
+        .page {
+            width: 50%;
+            margin-left: 25%;
+            border: black 1px solid;
+            height: auto;
+            padding: 10px;
+            font-family: arial;
+            color: black;
+            background-color: white;
+        }
+
+        .contentful {
+            list-style: upper-alpha;
+            text-align: center;
+            font-weight: bolder;
+            border-bottom: black solid 2px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            padding: 10px;
+            font-family: arial;
+        }
+
+        .contentful:hover::before {
+            content: "Load ";
+        }
+
+        .contentful:hover {
+            background-color: lightgrey;
+            opacity: 80%;
+            margin-bottom: 21px;
+        }
+
+        .contentful:hover::after {
+            content: " ?";
+        }
+
+        .Window {
+            background-color: navy;
+            height: 50%;
+            width: 50%;
+            animation-name: now;
+            animation-duration: 2s;
+            resize: both;
+        }
+
+        .Window::backdrop {
+            background: burlywood;
+            opacity: 50%;
+        }
+    </style>
+</head>
+
+<body style=background:black;>
+    <dialog id="Wind" class="Window" style="background-color: aliceblue;">
+        <ol>
+            <li id="c1" onclick="load1()" class="contentful">Content 1</li>
+            <li id="c2" onclick="load2()" class="contentful">Content 2</li>
+            <li id="c3" onclick="load3()" class="contentful">Content 3</li>
+            <li id="c4" onclick="load4()" class="contentful">Content 4</li>
+        </ol>
+
+    </dialog>
+    <marquee behavior="" direction="left" id="marquee" style=" color:white; opacity:40%; font-family: arial;"></marquee>
+    <div class="page">
+        <h1 id="heading" style="text-align: center;"></h1><p style="font-size: 16px;"><b id="pbp"></b></p>
+       
+        <p id="p"><input type='image' src='err.png' style='margin-left: 60px;' id="hmm"><button id='load'>load</button>
+        </p>
+    </div>
+    <script>
+        $("#marquee").text("Hello " + localStorage.getItem("username") + " This is your story!")
+        // if (localStorage.getItem("content") === "This is where you type" || localStorage.getItem("content") === "") {
+        //    $("p").append("")
+        // }
+        // else {
+        //     $("p").text(localStorage.getItem("content"))
+
+        // }
+        $("#load").click(function () {
+            var clv = document.getElementById("Wind")
+            clv.showModal()
+            $("#hmm").remove()
+            $("#load").remove()
+        })
+
+        function load1() {
+            var clv = document.getElementById("Wind")
+            if (localStorage.getItem("content1") === "") {
+
+                // somthing
+            }
+            else {
+                $("#p").text(localStorage.getItem("content1"))
+                $("#heading").text(localStorage.getItem("content1head"))
+                $("#pp").text("By " + localStorage.getItem("username"))
+
+            }
+            clv.close()
+        }
+        function load2() {
+            var clv = document.getElementById("Wind")
+            if (localStorage.getItem("content2") === "") {
+
+                // somthing
+            }
+            else {
+                $("#p").text(localStorage.getItem("content2"))
+                $("#heading").text(localStorage.getItem("content2head"))
+                $("#pp").text("By " + localStorage.getItem("username"))
+
+                clv.close()
+            }
+
+        }
+
+        function load3() {
+            var clv = document.getElementById("Wind")
+
+            if (localStorage.getItem("content3") === "") {
+
+                // somthing
+            }
+            else {
+                $("#p").text(localStorage.getItem("content3"))
+                $("#heading").text(localStorage.getItem("content3head"))
+                $("#pp").text("By " + localStorage.getItem("username"))
+
+            }
+            clv.close()
+        }
+        function load4() {
+            var clv = document.getElementById("Wind")
+            if (localStorage.getItem("content4") === "") {
+
+                // somthing
+            }
+            else {
+                $("#p").text(localStorage.getItem("content4"))
+                $("#heading").text(localStorage.getItem("content4head"))
+                $("#pbp").text("By " + localStorage.getItem("username"))
+
+            }
+            clv.close()
+        }
+
+// function Alltxt () {
+//     $("#c1").text(localStorage.getItem("content1head"))
+//     $("#c2").text(localStorage.getItem("content2head"))
+//     $("#c3").text(localStorage.getItem("content3head"))
+//     $("#c4").text(localStorage.getItem("content4head"))
+//     if (localStorage.getItem("content1head") === "" || localStorage.getItem("content2head") === "" || localStorage.getItem("content3head") === "" || localStorage.getItem("content4head") === "")
+//     this.setItem(this, "Untitled")
+// }
+// Alltxt()
+    </script>
+</body>
+
+</html>

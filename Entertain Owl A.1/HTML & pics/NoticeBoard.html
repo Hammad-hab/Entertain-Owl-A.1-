@@ -1,0 +1,161 @@
+<HTML>
+
+<head>
+    
+    <title>My Noticeboard</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <div style="padding: 10px; border: cadetblue 1px solid; background:linear-gradient(gold, goldenrod); "> <button
+            class="btn" id="backb" >back</button><input id="inval"
+            style="margin-left: 10px; padding: 6px;" placeholder="Enter data to be displayed"> <button class="btn" id="inputenter">Enter</button></div>
+<script>
+  
+</script>
+    <style>
+        .btn {
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 5px;
+            margin-left: 5px;
+            border: none;
+            background-color: gray;
+            font-family: Arial;
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: underline;
+        }
+
+        .link {
+            color: black;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            color: blue;
+        }
+
+        .welcomecardheading::selection {
+            background-color: yellowgreen;
+        }
+
+        .welcomecard {
+            padding: 10px;
+            margin-right: 50%;
+            margin-left: 3%;
+            border: black solid 2px;
+            width: 30%;
+            background: rgba(245, 245, 245, 0.87);
+            animation-name: card;
+            animation-duration: 5s;
+            margin-top: -10%;
+            position: relative;
+            font-family: arial;
+
+        }
+
+        .welcomecardheading {
+            font-family: Arial;
+            size: 30px;
+            border-bottom: solid lightgray 1px;
+            text-align: center;
+        }
+
+        .welcomecardheading:hover {
+            text-transform: uppercase;
+        }
+
+        .welcomecardheading:hover::after {
+            content: " for you";
+        }
+    </style>
+
+</head>
+
+<body style="background: linear-gradient(brown,  hsl(0, 71%, 18%));">
+    <div class="welcomecard ui-widget-content" style="display: block; margin-left: 40%; margin-top: 200px; " id="hello">
+        <p class="welcomecardheading">Notifications / Reminder</p>
+        <p style="font-family: Arial;" id="reminder">
+        <p id="themsg" style="font-family: arial;"></p>
+        </p>
+        <script>
+            if (localStorage.getItem("remindme") === "") {
+                $("#reminder").text("Nothing to remind")
+            }
+            else {
+                if (localStorage.getItem("tod") === "") { localStorage.setItem("tod", "09-30-2021") }
+                $("#reminder").text("Dear " + localStorage.getItem("username") + " You told us on " + localStorage.getItem("tod") + " to remind you the followng message: ")
+                $("#themsg").append("<b>" + localStorage.getItem("remindme") + "</b>")
+            }
+        </script>
+    </div>
+    <div class="welcomecard ui-widget-content">
+        <p class="welcomecardheading">Activity's</p>
+        <p>Hey! entertain owl will keep you entertained as long as you want!, it provides you safe options like:</p>
+        <ul>
+            <li><a href="The word.html" class="link">Word processer for typing</a></li>
+            <li><a href="Timer.html" class="link">A Clock</a></li>
+            <li>Some games</li>
+            <li><a href="Story.html" class="link">Stories</a></li>
+            <li>An drawing tool with good features</li>
+            <p class="textCenter">AND</p>
+            <li>Much More!</li>
+    </div>
+    <div class="welcomecard" id="usercard" style="margin-left: 50%;">
+        <p class="welcomecardheading" id="thisheading"><b>Your note</b></p>
+        <p id="ddcontent">Your content</p>
+        <script>
+           
+        // setInterval(function (){
+        //     var invalval = $("#inval").val(); $("#ddcontent").text(invalval)}, 100)
+$("#inputenter").click(
+ function () {   
+     var invalval = $("#inval").val()
+     localStorage.setItem("he","true")
+     localStorage.setItem("innval", invalval)
+
+     $("#ddcontent").text(localStorage.getItem("innval"))
+ })
+
+        // $("#inval").onChange(function () {$("#ddcontent").text(iput)})
+                </script>
+    </div>
+
+    <script>
+  if (localStorage.getItem("he") === "true") {
+    $("#ddcontent").text(localStorage.getItem("innval"))
+    }
+    else {
+        console.log("false")
+    }
+  
+        // $(document).ready(function () { if (localStorage.getItem("thisval") === "appendforever") { }})
+        // $("#indie").click(function(){
+        //     if (Number(localStorage.getItem("money")) < 1000)
+        //  {
+        // $("#indie").css("color","red")
+        // $("#indie").text("Sorry you need more ebondos")
+        // console.log(Number(localStorage.getItem("money"))
+        // )
+
+        //  }
+        //  else  {
+        //    console.log(Number(localStorage.getItem("money")))
+        // localStorage.setItem("money", "500")
+        //      alert("your good to go!")
+        //     //  window.location.replace("The word.html")
+        //  }
+        // })
+
+
+        $(document).ready(function () {
+            $(".welcomecard").draggable({ disabled: false })
+        })
+    $("#backb").click(function () {
+            window.location.replace("TheStart.html")
+        })
+    </script>
+    </div>
+
+</body>
+
+</HTML>

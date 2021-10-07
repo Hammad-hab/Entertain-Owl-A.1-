@@ -1,0 +1,19 @@
+<html>
+    <title>Welcome</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ <img src="Logo.png" style="margin-left: 30%;" id="img">
+        <p id="Start-text"
+            style="font-family: Pompiere; color: black; font-weight: bolder; text-decoration: underline; margin-left: 25%; margin-top: -8px; font-size: 20px;">
+        </p>
+        <script>
+         
+            $("#img").hide()
+            $("#img").fadeIn(5000)
+            $("#Start-text").hide()
+            $("#Start-text").fadeIn(5000)
+        $("#Start-text").text("Welcome " + localStorage.getItem("username"))
+            $("#img ").fadeOut(2000)
+            $("#Start-text").fadeOut(2000)
+           setTimeout(function () { window.location.replace('TheStart.html')}, 10000 )
+        </script>
+<html>

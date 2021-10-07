@@ -1,0 +1,180 @@
+﻿<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js">
+        "use strict"
+       
+    </script>
+    <title>Time</title>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+        button {
+            display: inline;
+            background-color: red;
+            padding: 10px;
+            border: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin-left: 55%;
+        }
+
+        button:hover {
+            background-color: lightcoral;
+        }
+
+        .div {
+            border: black solid 2px;
+            padding: 10px;
+            width: auto;
+            margin-left: 25%;
+            margin-right: 20%;
+        }
+
+        legend {
+            text-align: center;
+            font-weight: bold;
+            font-family: Arial;
+            font-size: 20px;
+            border-bottom: lightgray solid 1px
+        }
+
+        .Buttn {
+            background-color: lightgreen;
+            padding: 10px;
+            border: none;
+            width: 10%;
+            margin-left: 2px;
+        }
+    </style>
+</head>
+
+<body style="background-color: black;">
+    <button id="back" style="width: 5%; margin-left: -5; background-color: transparent; color: white;" title="back"
+        class="Buttn">back</button>
+    <div style="border: black solid 2px; margin-top: 10px; padding: 10px; background-color: white;" class="div" id="me">
+        <legend id="legend1">Timer</legend>
+        <div id="meme">
+            <p style="display: inline; font-family: Rampart One; color: red; margin-left: 25%;" id="time">
+            <p id="hours" style="display: inline; font-family: Rampart One; font-size: 599%; ">00:</p>
+            <p id="mins" style="display: inline; font-family: Rampart One; text-align: center; font-size: 499%;">00:</p>
+            <p id="secs" style="display: inline; font-family: Rampart One; text-align: center; font-size: 399%;">00:</p>
+            <p id="minisecs" style="display: inline; font-family: Rampart One; text-align: center; font-size: 299%;">00
+            </p>
+            </p>
+            <button id="Start-Timer" class="Buttn">Start</button><button class="Buttn" id="Stop-Timer">Stop</button>
+            <!--<button id="stop"></button>-->
+
+        </div>
+    </div>
+    <div class="div" style="background-color: white;">
+        <legend id="legend2">
+            Reminder</legend>
+        <div id="myme" style="margin-top: 10px;">
+            <p style="font-family: Arial; display: inline;">What to remind:<input
+                    style="outline: none; margin-left: 2px; margin-right: 2px; height: 24px;"
+                    placeholder="Enter What to remind" id="msgtr"><input type="date" id='date'
+                    placeholder="Enter date"><button class="Buttn" id="ok">OK</button>
+            <p style="color: lightskyblue; margin-left: 20px; font-family: arial; display: inline;" id="smtxt">No
+                messege to
+                be reminded</p>
+            </p>
+            <p style="font-family: arial;"><b>Note:</b> Reminder will only remind you when Entertain Owl is opened</p>
+        </div>
+
+
+        <script>
+
+            $("#back").click(function () {
+                window.location.replace("TheStart.html")
+            })
+            function store() {
+                $("#ok").click(function () {
+                    var inputval = $("#msgtr").val()
+                    var inputdate = $("#date").val()
+                    localStorage.setItem("remindme", inputval)
+
+                    localStorage.setItem("tod", inputdate)
+
+                })
+                if (localStorage.getItem("remindme") === "") {
+                    localStorage.setItem("isornot", "0 reminders")
+                }
+                else {
+                    localStorage.setItem("isornot", "1 reminders")
+                }
+
+
+                if (localStorage.getItem("isornot") === "1 reminders") {
+                    $("#smtxt").text(localStorage.getItem("isornot"))
+
+                }
+
+                $("#smtxt").click(function () {
+                    if (localStorage.getItem("remindme") === "") {
+                        localStorage.setItem("remindme", "Nothing to Remind")
+                    }
+                    $("#smtxt").css("font-weight", "bold")
+                    $("#smtxt").text(localStorage.getItem("remindme"))
+                })
+                $("#ok").click(function () {
+                    window.location.reload()
+                })
+                if (localStorage.getItem("remindme") === null) {
+                    localStorage.setItem("remindme", "Nothing to remind")
+                }
+                if (localStorage.getItem("tod") === null) {
+                    localStorage.setItem("remindme", "Nothing to remind")
+                }
+            }
+
+
+            store()
+
+
+            $("#Start-Timer").click(function () {
+                document.getElementById("Stop-Timer").disabled = false
+                document.getElementById("Start-Timer").disabled = true
+            
+                var i = 0
+                var t = 0
+                var f = 0
+                var m = 0
+                var minimins = setInterval(function () { m++; $("#minisecs").text(m); if (m === 10) { m = 0; } }, 100)
+                var mis = setInterval(function () { i++; $("#secs").text(i + ":"); if (i === 60) { i = 0; } }, 1000)
+                var minus = setInterval(function () { t++; $("#mins").text(t + ":") }, 60000)
+                var hours = setInterval(function () { f++; $("#hours").text(f + ":") }, 3.6e+6);
+
+                $("#Stop-Timer").click(function () {
+                    for (i = 0; i < 4; i++) {
+                        var clearAll = [minimins, mis, minus, hours]
+                        clearInterval(clearAll[i])
+                    }
+                    document.getElementById("Start-Timer").disabled = false
+                    document.getElementById("Stop-Timer").disabled =  true
+                })
+            })
+
+
+
+            $("#legend1").click(function () { $("#meme").toggle(600) })
+            $("#legend2").click(function () { $("#myme").toggle(600) })
+            // $(document).ready(function(){
+            //     setTimeout(function(){ var me = $("#legend1").position(); console.log(me)}, 2000)
+
+            // })
+            $(document).ready(function () {
+                $("#Time-comes-here").text(Date())
+            })
+            document.getElementById("msgtr").autocomplete = "on"
+        </script>
+    </div>
+    <div class="div" style="background-color: white;">
+        <legend id="legend3">
+            Time</legend>
+        <p id="Time-comes-here" style="font-family: arial; font-size: 20px; text-align: center;"></p>
+</body>
+
+</html>
